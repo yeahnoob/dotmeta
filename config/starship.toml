@@ -1,0 +1,99 @@
+# ~/.config/starship.toml
+
+# Use custom format
+format = """
+[=---------------------=](bold fg:#009900)
+[│](bold fg:#009900)$directory\
+$rust\
+$package\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$env_var\
+$python\
+$custom\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+[->](bold fg:#009900) """
+
+scan_timeout = 10
+
+# add_newline = false
+add_newline = true
+
+[cmd_duration]
+disabled = true
+
+[aws]
+disabled = true
+# symbol = " "
+# format = "on [$symbol$region]($style) "
+# style = "bold blue"
+
+[directory]
+read_only = " "
+truncation_length = 8
+
+[docker_context]
+symbol = " "
+
+[git_branch]
+symbol = " "
+truncation_length = 35
+truncation_symbol = "…"
+
+[git_commit]
+commit_hash_length = 8
+tag_symbol = "ﮉ "
+only_detached = true
+
+[git_status]
+# conflicted = "ﲅ "
+conflicted = " "
+ahead = "省 "
+behind = " "
+diverged = "⇕ "
+untracked = " "
+stashed = " "
+modified = " "
+staged = '[++\($count\)](green)'
+renamed = " "
+deleted = " "
+
+[cmake]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[julia]
+symbol = "ஃ "
+
+[dotnet]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[python]
+symbol = " "
+
+[swift]
+symbol = " "
+
