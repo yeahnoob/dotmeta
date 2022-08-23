@@ -235,16 +235,18 @@ if has('termguicolors')
   let g:airline_powerline_fonts = 1
   let g:airline_theme='hybrid'
 
-  let g:neovide_refresh_rate=60
-  let g:neovide_transparency=1
-  " let g:neovide_transparency=0.75
-  " let g:neovide_transparency=0.5
-  let g:neovide_cursor_vfx_mode='railgun'
-  let g:neovide_cursor_vfx_particle_lifetime=6.66
-  let g:neovide_cursor_vfx_particle_density=23
-  let g:neovide_cursor_vfx_opacity=150.0
-
-  set guifont=Delugia:h14
+  if exists("g:neovide")
+    set guifont=Delugia:h14
+    let g:neovide_refresh_rate=60
+    let g:neovide_refresh_rate_idle=5
+    let g:neovide_cursor_vfx_mode='railgun'
+    let g:neovide_cursor_vfx_particle_lifetime=6.66
+    let g:neovide_cursor_vfx_particle_density=23
+    let g:neovide_cursor_vfx_opacity=150.0
+    let g:neovide_transparency=1
+    " let g:neovide_transparency=0.75
+    " let g:neovide_transparency=0.5
+  endif
 
 endif
 
