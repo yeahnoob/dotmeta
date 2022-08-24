@@ -41,6 +41,8 @@ export INSTALL_POWERLINE_GO="go get -u github.com/justjanne/powerline-go"
 #  - Tmux plugin manager
 export INSTALL_TMUX_TPM="git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
 
+tmux source-file ~/.tmux.conf
+
 # Keychain
 # The file names of private key should be update depend on your configuration of the SSH keys.
 if [ -f /usr/bin/keychain ]; then

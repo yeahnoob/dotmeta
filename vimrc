@@ -39,7 +39,7 @@ call dein#add('gongxgong/papercolor-theme')
 "@" call dein#add('itchyny/lightline.vim')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
-call dein#add('edkolev/tmuxline.vim')
+" call dein#add('edkolev/tmuxline.vim')
 
 "@" call dein#add('jbgutierrez/vim-better-comments')
 call dein#add('folke/todo-comments.nvim')
@@ -158,8 +158,26 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 
-""" tmux statusline
-let g:airline#extensions#tmuxline#enabled = 1
+"@# """ tmux statusline
+"@# let g:tmuxline_status_justify = 'centre'
+"@# let g:tmuxline_preset = {
+"@#       \'a' : '#{pane_current_path}',
+"@#       \'c' : ['', 'NX SaaS Group', '#{net_speed}', ''],
+"@#       \'x' : ['UTC:', '#(~/bin/get-utc-date)'],
+"@#       \'y' : [''],
+"@#       \'z' : ['LOCAL:', '%Y-%m-%d %R', '%A'],
+"@#       \'options' : {'status-interval' : 5, 'status-left-length' : 120, 'status-right-length' : 120, 'window-status-current-style' : 'underscore', '@net_speed_interfaces' : 'eth0', '@net_speed_format' : 'D:%10s U:%10s'}}
+
+" let g:tmuxline_preset = {
+"   \'a'    : '#S',
+"   \'c'    : ['#(whoami)', '#(uptime  | cut -d " " -f 1,2,3)'],
+"   \'win'  : ['#I', '#W'],
+"   \'cwin' : ['#I', '#W', '#F'],
+"   \'x'    : '#(date)',
+"   \'y'    : ['%R', '%a', '%Y'],
+"   \'z'    : '#H'}
+
+let g:airline#extensions#tmuxline#enabled = 0
 
 "@" " Using `Enter` as `Esc`
 "@" function! ToggleEnterMapping()
