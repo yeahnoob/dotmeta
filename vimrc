@@ -144,6 +144,13 @@ augroup number_toggle
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
 
+if system('uname -r') =~ "WSL2"
+    augroup Yank
+        autocmd!
+        autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+        augroup END
+endif
+
 let g:tabar_ctags_bin='/usr/bin/ctags-universal'
 
 let g:deoplete#enable_at_startup = 1

@@ -1,0 +1,11 @@
+{
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "trace.server": "verbose",
+      "filetypes": ["go"],
+      "goplsPath": "/home/xambu9/app/gopath/bin/gopls"
+    }
+  }
+}
+
