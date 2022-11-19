@@ -46,7 +46,7 @@ return {
 			key = 'T',
 			mods = 'CTRL|SHIFT',
 			action = act.SpawnTab {
-				DomainName = 'wsl2',
+				DomainName = 'Linux in WSL2',
 			},
 		},
 	},
