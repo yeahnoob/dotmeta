@@ -68,6 +68,7 @@ call dein#add('Yggdroot/indentLine')
 call dein#add('nvim-treesitter/nvim-treesitter', {'hook_post_update': 'TSUpdate' })
 call dein#add('nvim-lua/plenary.nvim')
 call dein#add('nvim-neorg/neorg')
+call dein#add('christoomey/vim-tmux-navigator')
 lua << EOF
   require('neorg').setup {
     -- Tell Neorg what modules to load
