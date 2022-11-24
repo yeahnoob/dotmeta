@@ -10,12 +10,16 @@ return {
 			default_cwd = '~/',
 		},
 	},
+	-- window_background_opacity = 0.7,
+	-- window_background_image = 'C:\\Users\\yeahnoob\\Pictures\\tsy_in_the_valley_art_design.png',
+	text_background_opacity = 0.3,
 	color_scheme = 'Gruvbox Dark',
-	font = wezterm.font_with_fallback({
-		-- { family = 'Operator Mono Lig', weight = 'DemiLight'},
-		{ family = 'Operator Mono Lig', weight = 325, italic = false },
-		'CaskaydiaCove NF Mono',
-	}),
+	-- font = wezterm.font_with_fallback({
+	-- 	-- { family = 'Operator Mono Lig', weight = 'DemiLight'},
+	-- 	{ family = 'Operator Mono Lig', weight = 325, italic = false },
+	-- 	'CaskaydiaCove NF Mono',
+	-- }),
+	font = wezterm.font('CaskaydiaCove NF Mono'),
 	font_size = 14.0,
 	launch_menu = {
 		{
