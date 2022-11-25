@@ -139,11 +139,11 @@ if [ -d $HOME/.yarn ]; then
     export PATH=$YARN_HOME/bin:$PATH
 fi
 
+
 if [ -f /usr/local/bin/nvim ]; then
     alias nv='/usr/local/bin/nvim'
     alias vv='/usr/local/bin/nvim'
-fi
-if [[ -f /usr/bin/nvim-qt ]] || [[ -f /usr/local/bin/nvim-qt ]]; then
+elif [[ -f /usr/bin/nvim-qt ]] || [[ -f /usr/local/bin/nvim-qt ]]; then
     alias nvq='nvim-qt'
 fi
 
