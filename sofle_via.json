@@ -50,7 +50,7 @@
       "KC_LCTL",
       "MO(2)",
       "KC_SPC",
-      "RGB_TOG",
+      "KC_LGUI",
       "KC_BSPC",
       "KC_0",
       "KC_9",
@@ -80,7 +80,7 @@
       "KC_MINS",
       "MO(3)",
       "KC_ENT",
-      "KC_LGUI"
+      "RGB_TOG"
     ],
     [
       "KC_GRV",
@@ -174,7 +174,7 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_TRNS",
+      "KC_MUTE",
       "KC_F11",
       "KC_F10",
       "KC_F9",
@@ -213,13 +213,13 @@
       "KC_PSLS",
       "KC_PAST",
       "KC_PMNS",
-      "KC_TRNS",
+      "RGB_M_SW",
       "KC_INS",
       "KC_P7",
       "KC_P8",
       "KC_P9",
       "KC_PPLS",
-      "KC_TRNS",
+      "RGB_M_P",
       "KC_TRNS",
       "KC_P4",
       "KC_P5",
@@ -266,7 +266,7 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_MUTE"
+      "KC_TRNS"
     ]
   ],
   "encoders": []
