@@ -80,7 +80,7 @@
       "KC_MINS",
       "MO(3)",
       "KC_ENT",
-      "KC_PSCR"
+      "KC_LGUI"
     ],
     [
       "KC_GRV",
@@ -169,7 +169,7 @@
       "KC_LCBR",
       "KC_RCBR",
       "KC_TRNS",
-      "KC_LPRN",
+      "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -255,13 +255,13 @@
       "KC_DOWN",
       "KC_LEFT",
       "KC_PGDN",
-      "KC_RGUI",
+      "KC_PSCR",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_RPRN",
+      "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
