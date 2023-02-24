@@ -41,13 +41,26 @@ export INSTALL_POWERLINE_GO="go get -u github.com/justjanne/powerline-go"
 #  - Tmux plugin manager
 export INSTALL_TMUX_TPM="git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
 
-tmux source-file ~/.tmux.conf
+if [ $TMUX ]; then
+  tmux source-file ~/.tmux.conf
+fi
+
+# shell widget by `navi`
+# eval "$(navi widget bash)"
 
 # Keychain
 # The file names of private key should be update depend on your configuration of the SSH keys.
 if [ -f /usr/bin/keychain ]; then
     /usr/bin/keychain -q --nogui ${HOME}/.ssh/id_rsa ${HOME}/.ssh/id_rsa_github
     source ${HOME}/.keychain/${HOSTNAME}-sh
+fi
+
+if [ -f ~/.sdkman/bin/sdkman-init.sh ]; then
+    source ~/.sdkman/bin/sdkman-init.sh
+fi
+
+if [ -p $HOME/.local/bin ]; then
+    PATH = $HOME/.local/bin:$PATH
 fi
 
 
@@ -58,8 +71,9 @@ alias la='ls -a'
 alias ll='ls -la'
 alias lst='ls -lstr'
 
-alias icat='kitty +kitten icat'
-alias d='kitty +kitten diff'
+# alias icat='kitty +kitten icat'
+# alias d='kitty +kitten diff'
+
 
 alias ggd='git diff'
 alias ggs='git status'
@@ -140,11 +154,22 @@ if [ -d $HOME/.yarn ]; then
 fi
 
 
-if [ -f /usr/local/bin/nvim ]; then
+if [ -f /usr/bin/nvim ]; then
+    alias nv='/usr/bin/nvim'
+    alias vv='/usr/bin/nvim'
+elif [ -f /usr/local/bin/nvim ]; then
     alias nv='/usr/local/bin/nvim'
     alias vv='/usr/local/bin/nvim'
-elif [[ -f /usr/bin/nvim-qt ]] || [[ -f /usr/local/bin/nvim-qt ]]; then
+fi
+
+if [[ -f /usr/bin/nvim-qt ]] || [[ -f /usr/local/bin/nvim-qt ]]; then
     alias nvq='nvim-qt'
+fi
+
+# alacrity
+if [ -d $HOME/.yarn ]; then
+    export YARN_HOME=$HOME/.yarn
+    export PATH=$YARN_HOME/bin:$PATH
 fi
 
 set_rust_crates_mirror() {
