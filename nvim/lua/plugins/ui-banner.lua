@@ -12,20 +12,24 @@ return {
     event = "VimEnter",
     opts = function()
       local logo = [[
-           .                 _.~^ ~^, ^~ . _                    .
-           .               ((_ ' ( `  )_  ._))                  .
-           .           (( (  (    )   `)  ) _))                 .
-           .          (__ (_   (_ . _)   _) ,__)                .
-           .                `~~`\' . /`~~`                      .
-           .                                                 .
-           .                                                  .
-           .                                                  .
-           .               ,:::     :::,                     .
-           .              ':::::::::::::::'                     .
-           .___nooBs_Bugs______/_ __ \_______Booooom!!!_________.
-           |                                                  Z |
-           |    Dr.Nuke: Welcome to the Brave New World!   Z    |
-           |____________________________________________z_______|
+        .                 _.~^ ~^,*^* ^^~ . _ .              .
+        .          ((_  '  ( `  ( )   )_   ).`   ._))        .
+        .      ((   (    (    (     )    )   `)   )  _))     .
+        .    (__   (_   (_   (_   .  _)    _)   ,__& ___)    .
+        .                `` `~~`\' . /`~~` `                 .
+        .                                               .
+        .                                                .
+        .                                                  .
+        .                  ,:!:   :!:,                    .
+        .              '. . . . . . . . . . . '              .
+        .         '.. .. .. .. .. .. .. .. .. .. ..'         .
+        .    '.. .. .. .. .. .. .. .. .. .. .. .. .. ..'     .
+        . '~~ .. ~~ .. ~~ ^^!! !!! !!^^ ~~ .. ~~ .. ~~ ~~'   .
+        |^^^^^^^^^^^^^^^    \!     !/   ^^^^^^^^^^^^^^^^^^^^^|
+        .___nooBs_Bugs_______/_ __ \_______Booooom!!!________.
+        |                                                  Z |
+        |    Dr.Nuke: Welcome to the Brave New World!   Z    |
+        |____________________________________________z_______|
       ]]
 
       logo = string.rep("\n", 6) .. logo .. "\n\n"
@@ -68,8 +72,8 @@ return {
       }
 
       for _, button in ipairs(opts.config.center) do
-        button.desc = button.desc .. string.rep(" ", 4 - #button.desc)
-        button.key_format = "  %s"
+        button.desc = button.desc .. string.rep(" ", 25 - #button.desc)
+        button.key_format = "           %s"
       end
 
       -- close Lazy and re-open when the dashboard is ready
