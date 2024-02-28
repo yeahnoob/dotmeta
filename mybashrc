@@ -21,6 +21,7 @@
 # ## Set an End Time for most things
 # Complete things with Self-satisfaction.
 
+
 # ## Disable All Proxy
 export HTTP_PROXY=
 export HTTPS_PROXY=
@@ -41,27 +42,25 @@ export INSTALL_POWERLINE_GO="go get -u github.com/justjanne/powerline-go"
 #  - Tmux plugin manager
 export INSTALL_TMUX_TPM="git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
 
-if [ $TMUX ]; then
-  tmux source-file ~/.tmux.conf
+#  - Tmux shell functions
+if [ -f ${HOME}/bin/tmux-session ] && [ -z "${TMUX}" ]; then
+    echo '.. INFO .. "$ tmux-session save" - to write basic info of sessions to "~/.tmux-session"'
+    echo '.. INFO .. "$ tmux-session restore" - to restore the sessions from "~/.tmux-session"'
+    echo
 fi
+
+# tmux source-file ~/.tmux.conf
 
 # shell widget by `navi`
 # eval "$(navi widget bash)"
 
-# Keychain
-# The file names of private key should be update depend on your configuration of the SSH keys.
-if [ -f /usr/bin/keychain ]; then
-    /usr/bin/keychain -q --nogui ${HOME}/.ssh/id_rsa ${HOME}/.ssh/id_rsa_github
-    source ${HOME}/.keychain/${HOSTNAME}-sh
-fi
-
-if [ -f ~/.sdkman/bin/sdkman-init.sh ]; then
-    source ~/.sdkman/bin/sdkman-init.sh
-fi
-
-if [ -p $HOME/.local/bin ]; then
-    PATH = $HOME/.local/bin:$PATH
-fi
+# Ignore `keychain` store for Corp remote host
+# #@# Keychain
+# #@# The file names of private key should be update depend on your configuration of the SSH keys.
+# if [ -f /usr/bin/keychain ]; then
+#     /usr/bin/keychain -q --nogui ${HOME}/.ssh/id_rsa ${HOME}/.ssh/id_rsa_github
+#     source ${HOME}/.keychain/${HOSTNAME}-sh
+# fi
 
 
 #
@@ -71,9 +70,8 @@ alias la='ls -a'
 alias ll='ls -la'
 alias lst='ls -lstr'
 
-# alias icat='kitty +kitten icat'
-# alias d='kitty +kitten diff'
-
+alias icat='kitty +kitten icat'
+alias d='kitty +kitten diff'
 
 alias ggd='git diff'
 alias ggs='git status'
@@ -81,7 +79,10 @@ alias ggl='git log'
 alias gga='git add'
 alias ggm='git commit -m'
 
+alias upup='sudo apt update; sudo apt upgrade -y'
+
 # alias gr='rg'
+alias fd='fdfind'
 
 export JULIA_PKG_SERVER="https://mirrors.tuna.tsinghua.edu.cn/julia/static"
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
@@ -100,10 +101,10 @@ if [ -d $HOME/app/go ]; then
     export GOPATH=$HOME/app/gopath
     export GO111MODULE=on
     export GOPROXY=
-    export GOSUMDB=
-    # export GOPROXY=https://goproxy.io,direct
     # export GOPROXY=https://mirrors.cloud.tencent.com/go/,direct
     export GOPROXY=https://mirrors.aliyun.com/goproxy,direct
+    # export GOPROXY=https://goproxy.io,direct
+    export GOSUMDB=
     export GOSUMDB="sum.golang.google.cn"
     # export GOSUMDB=gosum.io+ce6e7565+AY5qEHUk/qmHc5btzW45JVoENfazw8LielDsaI+lEbq6
     export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
@@ -153,23 +154,12 @@ if [ -d $HOME/.yarn ]; then
     export PATH=$YARN_HOME/bin:$PATH
 fi
 
-
-if [ -f /usr/bin/nvim ]; then
-    alias nv='/usr/bin/nvim'
-    alias vv='/usr/bin/nvim'
-elif [ -f /usr/local/bin/nvim ]; then
+if [ -f /usr/local/bin/nvim ]; then
     alias nv='/usr/local/bin/nvim'
     alias vv='/usr/local/bin/nvim'
 fi
-
 if [[ -f /usr/bin/nvim-qt ]] || [[ -f /usr/local/bin/nvim-qt ]]; then
     alias nvq='nvim-qt'
-fi
-
-# alacrity
-if [ -d $HOME/.yarn ]; then
-    export YARN_HOME=$HOME/.yarn
-    export PATH=$YARN_HOME/bin:$PATH
 fi
 
 set_rust_crates_mirror() {
@@ -183,6 +173,10 @@ EOF_CARGO_CONFIG
 
 set -o ignoreeof
 
+
+echo -ne "\x1b]0;WSL2\x1b\\"
+
+export PS1=" ~~ ~~ ~~    ~~ ~~ ~~\n\[\033[00;34m\]==>\[\033[00m\]$ "
 #@# # emoji used
 #@# # 🐛
 #@# # 🇨🇳
