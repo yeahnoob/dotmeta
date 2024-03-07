@@ -30,8 +30,15 @@ export HTTPS_PROXY=
 export INSTALL_RUSTUP="curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
 #  - golang `curl -O -L https://golang.org/dl/go1.14.6.linux-amd64.tar.gz`
 export INSTALL_GOLANG="curl -O -L https://golang.org/dl/go1.15.3.linux-amd64.tar.gz"
-#  - node.js version manager `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`
-export INSTALL_NODEJS="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash"
+
+#  - node.js version manager
+#  ```
+#  export NVS_HOME="$HOME/.nvs"
+#  git clone https://github.com/jasongin/nvs "$NVS_HOME"
+#  . "$NVS_HOME/nvs.sh" installer
+#  ```
+export INSTALL_NODEJS="git clone https://github.com/jasongin/nvs $HOME/.nvs"
+
 #  - yarn package manager `curl -o- -L https://yarnpkg.com/install.sh | bash`
 #  - sdkman sdk manager `curl -s "https://get.sdkman.io" | bash`
 export INSTALL_SDKMAN="curl -s 'https://get.sdkman.io' | bash"
@@ -157,6 +164,10 @@ fi
 if [ -f /usr/local/bin/nvim ]; then
     alias nv='/usr/local/bin/nvim'
     alias vv='/usr/local/bin/nvim'
+fi
+if [ -f ${HOME}/bin/nvim ]; then
+    alias nv=${HOME}/bin/nvim
+    alias vv=${HOME}/bin/nvim
 fi
 if [[ -f /usr/bin/nvim-qt ]] || [[ -f /usr/local/bin/nvim-qt ]]; then
     alias nvq='nvim-qt'
