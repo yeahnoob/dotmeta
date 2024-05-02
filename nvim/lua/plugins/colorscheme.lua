@@ -8,7 +8,15 @@
 -- * override the configuration of LazyVim plugins
 return {
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  {
+    "ellisonleao/gruvbox.nvim",
+    -- override Red by Purple
+    opts = {
+      palette_overrides = {
+        bright_red = "#f69468",
+      },
+    },
+  },
 
   -- Configure LazyVim to load gruvbox
   {
