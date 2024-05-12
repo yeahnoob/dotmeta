@@ -184,8 +184,12 @@ EOF_CARGO_CONFIG
 
 set -o ignoreeof
 
+function set_win_title(){
+    echo -ne "\033]0; $(basename "$PWD")\007"
+}
+starship_precmd_user_func="set_win_title"
 
-echo -ne "\x1b]0;WSL2\x1b\\"
+# echo -ne "\x1b]0;Shell\x1b\\"
 
 export PS1=" ~~ ~~ ~~    ~~ ~~ ~~\n\[\033[00;34m\]==>\[\033[00m\]$ "
 #@# # emoji used
